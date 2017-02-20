@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Current_password: MyString
+  New_password: MyString
+  Confirm_new_password: MyString
+
+two:
+  Current_password: MyString
+  New_password: MyString
+  Confirm_new_password: MyString

