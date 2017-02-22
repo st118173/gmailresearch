@@ -101,10 +101,9 @@ form :invalid {
   padding: 0px;
   overflow: hidden;
 }
-.profile-img-card {
-  width: 36px;
-  float: left;
-  display: block;
+#profile-img {
+  width: 39px;
+  display: inline-block;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
