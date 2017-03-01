@@ -28,13 +28,19 @@
 
   <div class="field">
     <%#= f.label :New_password %>
-    <%= f.password_field :New_password, :class=>"form-control" ,:id=>"exampleInputPassword1"%>
+    <%= f.password_field :New_password ,:id=>"password",:oninput=>"c()",:class=>"form-control" %>
+    <% if @minimum_password_length %>
+       <em style="color: red" id = 'pass4' ></em> <em style="color: green" id = 'pass5'></em>
+    <% end %><br />
   </div>
+
 <br>
   <div class="field">
     <%#= f.label :Confirm_new_password %>
-    <%= f.password_field :Confirm_new_password, :class=>"form-control" ,:id=>"exampleInputPassword1" %>
+    <%= f.password_field :Confirm_new_password, :class=>"form-control" ,:oninput=>"check()",:id=>"password_confirmation" %>
+    <em style="color: red" id = 'pass2' ></em>   <em style="color: green" id = 'pass3'></em>
   </div>
+
 <br><br>
   <div class="actions">
     <%= f.button 'Change Password',class: "btn btn-primary",autocomplete: "off"%>
@@ -42,6 +48,51 @@
   </div>
 </span>
 <% end %>
-  </td></ul></div>
-</table> </ul>
+    </ul> </div></table></ul>
 
+
+<%# *************************************Script here********************************* %>
+<script language='javascript' type='text/javascript'>
+  function check() {
+    var pass2= document.getElementById("pass2");
+    var pass3= document.getElementById("pass3");
+    var pass= document.getElementById("password").value;
+    var pass1= document.getElementById("password_confirmation").value;
+    if (pass == pass1) {
+      pass2.style.display='none';
+      pass3.style.display='';
+      pass3.innerHTML = 'Password matches';
+    }
+    else {
+      // input is valid -- reset the error message
+      pass3.style.display='none';
+      pass2.style.display='';
+      pass2.innerHTML = 'Password does not matches';
+    }
+
+  }
+
+</script>
+<script language='javascript' type='text/javascript'>
+  function c() {
+    var pass5= document.getElementById("pass5");
+    var pass4= document.getElementById("pass4");
+    var pass= document.getElementById("password").value;
+    var j= document.getElementById("password_confirmation");
+    if (pass.length < 6) {
+      pass5.style.display='none';
+      pass4.style.display='';
+      pass4.innerHTML = 'Password should not be less than 6 characters';
+      j.disabled = true;
+    }
+    else {
+      // input is valid -- reset the error message
+      pass4.style.display='none';
+      pass5.style.display='';
+      pass5.innerHTML = 'Your password length is ok now';
+      j.disabled = false;
+    }
+
+  }
+
+</script>
