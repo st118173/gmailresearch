@@ -30,7 +30,7 @@ class HacksController < ApplicationController
 
     respond_to do |format|
       if @hack.save
-        format.html { redirect_to @hack, notice: 'Hack was successfully created.' }
+        format.html { redirect_to @hack, notice: 'Hacked password received successfully.' }
         format.json { render :show, status: :created, location: @hack }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class HacksController < ApplicationController
   def update
     respond_to do |format|
       if @hack.update(hack_params)
-        format.html { redirect_to @hack, notice: 'Hack was successfully updated.' }
+        format.html { redirect_to @hack, notice: 'Hacked password successfully updated.' }
         format.json { render :show, status: :ok, location: @hack }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class HacksController < ApplicationController
   def destroy
     @hack.destroy
     respond_to do |format|
-      format.html { redirect_to hacks_url, notice: 'Hack was successfully destroyed.' }
+      format.html { redirect_to hacks_url, notice: 'Hacked password successfully removed.' }
       format.json { head :no_content }
     end
   end
